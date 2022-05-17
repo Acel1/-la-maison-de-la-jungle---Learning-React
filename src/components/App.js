@@ -4,7 +4,7 @@ import logo from "../assets/logo.png"
 import Cart from "./Cart"
 import Footer from "./Footer"
 import ShoppingList from "./ShoppingList"
-import "../styles/Layout.css"
+import "../scss/Layout.scss"
 
 function App() {
   const [cart, updateCart] = useState([])

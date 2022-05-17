@@ -1,0 +1,25 @@
+//---COLORS---//
+$color-main: #1b4ee4;
+$color-main-white: #f7f7fa;
+$color-hover: rgb(243, 243, 243);
+$color-component: rgb(110, 110, 110);
+$color-component2: #e0e0e0;
+$color-stats: #79d7bd;
+
+//---DIMENSIONS---//
+$height-header: 70px;
+$margin-header: 0 12px;
+//---FONTS-SIZE---//
+$font-small: 1rem;
+$font-medium: 1.2rem;
+$font-large: 1.4rem;
+$font-xl: 1.6rem;
+
+//---BORDERS---//
+
+$border-main: darken($color-main-white, 5%);
+
+//---box-shadow
+
+$shadow-main: 0px 8px 24px rgb(13 13 18 / 0.04);
+$shadow-dropdown: 5px 5px 10px 0px rgb(0 0 0 / 15%);
