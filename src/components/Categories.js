@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "../scss/dropdown.scss"
 
 function Categories({ categories, selected, toggleOption }) {
   const [toggleIndex, setToggleIndex] = useState(false)
@@ -27,7 +26,7 @@ function Categories({ categories, selected, toggleOption }) {
             <span>All</span>
           ) : (
             selected.map((cat) => {
-              return <span>{cat}</span>
+              return <span className='dropdown__selected'>{cat}</span>
             })
           )}
         </div>

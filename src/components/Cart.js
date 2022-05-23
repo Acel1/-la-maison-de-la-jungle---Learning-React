@@ -1,40 +1,55 @@
 import { useState, useEffect } from "react"
-import "../scss/Cart.scss"
+import { AiFillDelete } from "react-icons/ai"
 
-function Cart({ cart, updateCart, addItem, deleteItem }) {
-  const [isOpen, setIsOpen] = useState(true)
+function Cart({ cart, updateCart, addItem, deleteItem, isOpen, setIsOpen }) {
   const total = cart.reduce((acc, plantType) => acc + plantType.amount * plantType.price, 0)
   useEffect(() => {
     document.title = `LMJ: ${total}€ d'achats`
   }, [total])
 
   return isOpen ? (
-    <div className='lmj-cart'>
-      <button className='lmj-cart-toggle-button' onClick={() => setIsOpen(false)}>
+    <div className='cart'>
+      <button className='cart__toggle-btn' onClick={() => setIsOpen(false)}>
         Fermer
       </button>
       {cart.length > 0 ? (
-        <div>
-          <h2>Panier</h2>
-          <ul>
+        <div className='cart__content'>
+          <div className='cart__list'>
+            <h2>Panier</h2>
             {cart.map(({ name, price, amount }, index) => (
-              <div key={`${name}-${index}`}>
-                {name} {price}€ x {amount}
-                <button onClick={() => addItem(name, price)}>+</button>
-                <button onClick={() => deleteItem(name, price)}>-</button>
+              <div key={`${name}-${index}`} className='cart__item'>
+                <span>
+                  {name} {price}€ x {amount}
+                </span>
+                <div>
+                  <button onClick={() => addItem(name, price)} className='btn btn--cart'>
+                    +
+                  </button>
+                  <button onClick={() => deleteItem(name, price)} className='btn btn--cart btn--red'>
+                    -
+                  </button>
+                </div>
               </div>
             ))}
-          </ul>
-          <h3>Total :{total}€</h3>
-          <button onClick={() => updateCart([])}>Vider le panier</button>
+            <button className='btn btn--grey' onClick={() => updateCart([])}>
+              <AiFillDelete />
+              Vider le panier
+            </button>
+          </div>
+
+          <div className='cart__footer'>
+            <h3>Total : {total}€</h3>
+          </div>
         </div>
       ) : (
-        <div>Votre panier est vide</div>
+        <div className='cart__content cart__content--empty'>
+          <h2>Votre panier est vide</h2>
+        </div>
       )}
     </div>
   ) : (
-    <div className='lmj-cart-closed'>
-      <button className='lmj-cart-toggle-button' onClick={() => setIsOpen(true)}>
+    <div className='cart-closed'>
+      <button className='cart__toggle-btn' onClick={() => setIsOpen(true)}>
         Ouvrir le Panier
       </button>
     </div>

@@ -1,0 +1,37 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-component;
+  border: 1px solid hsla(0, 0%, 0%, 0.353);
+  padding: 4px 10px;
+  font-weight: 600;
+  cursor: pointer;
+  &--cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1em;
+    margin: 0 2px;
+    border-radius: 0.5em;
+  }
+
+  &--red {
+    background: $color-component2;
+    top: 10px;
+  }
+
+  &--grey {
+    margin: 20px 0;
+    padding: 4px 18px;
+    border-radius: 1em;
+    color: hsl(0, 0%, 30%);
+    border-color: hsl(0, 0%, 30%);
+    background: hsl(0, 0%, 90%);
+    gap: 8px;
+    font-size: 0.8em;
+  }
+}

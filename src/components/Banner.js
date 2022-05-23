@@ -1,7 +1,5 @@
-import "../scss/Banner.scss"
-
 function Banner({ children }) {
-  return <div className='lmj-banner'>{children}</div>
+  return <div className='banner'>{children}</div>
 }
 
 export default Banner

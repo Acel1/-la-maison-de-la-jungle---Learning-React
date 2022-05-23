@@ -2,9 +2,8 @@ import { useState } from "react"
 import { plantList } from "../datas/plantList"
 import PlantItem from "./PlantItem"
 import Categories from "./Categories"
-import "../scss/ShoppingList.scss"
 
-function ShoppingList({ addItem }) {
+function ShoppingList({ addItem, setIsOpen }) {
   const [selected, setSelected] = useState([""])
   const categories = plantList.reduce((acc, elem) => (acc.includes(elem.category) ? acc : acc.concat(elem.category)), [])
 
@@ -27,8 +26,7 @@ function ShoppingList({ addItem }) {
         {plantList.map(({ id, cover, name, water, light, price, category }) =>
           selected.includes(category) || selected.length === 1 ? (
             <div key={id}>
-              <PlantItem cover={cover} name={name} water={water} light={light} price={price} />
-              <button onClick={() => addItem(name, price)}>Ajouter</button>
+              <PlantItem cover={cover} name={name} water={water} light={light} price={price} addItem={addItem} setIsOpen={setIsOpen} />
             </div>
           ) : null
         )}
