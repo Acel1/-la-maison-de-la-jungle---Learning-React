@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { AiFillDelete } from "react-icons/ai"
 
 function Cart({ cart, updateCart, addItem, deleteItem, isOpen, setIsOpen }) {

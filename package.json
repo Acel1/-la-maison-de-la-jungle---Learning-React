@@ -1,5 +1,6 @@
 {
-  "name": "la",
+  "homepage": "https://Acel.github.io/La-Maison-Jungle",
+  "name": "la-maison-jungle",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build-css": "node-sass --include-path scss src/scss/main.scss   public/css/main.css",
-    "sass": "nodemon -e scss -x \"npm run build-css\""
+    "sass": "nodemon -e scss -x \"npm run build-css\"",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "node-sass": "^7.0.1",
     "nodemon": "^2.0.16"
   }
