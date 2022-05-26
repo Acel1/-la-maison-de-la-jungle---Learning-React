@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { AiFillDelete } from "react-icons/ai"
 
 function Cart({ cart, updateCart, addItem, deleteItem, isOpen, setIsOpen }) {
@@ -19,14 +19,15 @@ function Cart({ cart, updateCart, addItem, deleteItem, isOpen, setIsOpen }) {
             {cart.map(({ name, price, amount }, index) => (
               <div key={`${name}-${index}`} className='cart__item'>
                 <span>
-                  {name} {price}€ x {amount}
+                  {name} {price}€
                 </span>
                 <div>
-                  <button onClick={() => addItem(name, price)} className='btn btn--cart'>
-                    +
-                  </button>
                   <button onClick={() => deleteItem(name, price)} className='btn btn--cart btn--red'>
                     -
+                  </button>
+                  <span className='cart__amount'>{amount}</span>
+                  <button onClick={() => addItem(name, price)} className='btn btn--cart'>
+                    +
                   </button>
                 </div>
               </div>

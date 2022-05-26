@@ -28,12 +28,12 @@ function App() {
   return (
     <div>
       <Banner>
-        <img src={logo} alt='La maison jungle' className='lmj-logo' />
+        <img src={logo} alt='La maison jungle' className='banner__logo' />
         <h1 className='banner__title'>La maison jungle</h1>
       </Banner>
       <div className='lmj-layout-inner'>
-        <Cart isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} addItem={addItem} deleteItem={deleteItem} />
         <ShoppingList setIsOpen={setIsOpen} addItem={addItem} />
+        <Cart isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} updateCart={updateCart} addItem={addItem} deleteItem={deleteItem} />
       </div>
       <Footer />
     </div>
